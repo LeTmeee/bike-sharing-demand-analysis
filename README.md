@@ -144,8 +144,7 @@ project/
     ├── hypothesis_testing_plan.md      # 假设检验实现方案
     ├── clustering_plan.md              # 聚类实现方案
     ├── feature_selection_plan.md       # 特征选择实现方案
-    ├── synthesis_reorganization_plan.md # 模块改号与最终综合方案
-    └── project_review.md               # 发布前核查、验证范围与展示建议
+    └── synthesis_reorganization_plan.md # 模块改号与最终综合方案
 ```
 
 目录树省略了本地环境和临时文件：`.venv/`为解释器与依赖，`.idea/`为IDE配置，`__pycache__/`为Python缓存，`tmp/`为历史临时或检查产物。它们不作为分析结论的证据入口。
