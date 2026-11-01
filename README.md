@@ -179,7 +179,6 @@ project/
 ├── .gitattributes                      # 文本换行规则与CSV字节保护
 ├── README.md                           # 项目说明与运行入口
 ├── requirements.txt                    # Python依赖清单
-├── requirements-reproduce.txt          # 本次检查的直接依赖版本快照
 ├── data/
 │   ├── README.md                       # 数据来源、标签与分享说明
 │   ├── raw/
