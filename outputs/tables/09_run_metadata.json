@@ -1,0 +1,308 @@
+{
+  "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
+  "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+  "upstream_runs": {
+    "06": {
+      "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
+      "seed": 18,
+      "bootstrap": 2000,
+      "python": "3.8.17",
+      "pandas": "2.0.3",
+      "numpy": "1.24.4",
+      "scipy": "1.10.1",
+      "dates": 456,
+      "complete_dates": 414,
+      "tied_weather_dates": 15
+    },
+    "07": {
+      "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
+      "seed": 18,
+      "n_init": 20,
+      "max_k": 6,
+      "primary": "share",
+      "scaling": "none; equal hourly weights",
+      "feature_columns": [
+        "hour_00",
+        "hour_01",
+        "hour_02",
+        "hour_03",
+        "hour_04",
+        "hour_05",
+        "hour_06",
+        "hour_07",
+        "hour_08",
+        "hour_09",
+        "hour_10",
+        "hour_11",
+        "hour_12",
+        "hour_13",
+        "hour_14",
+        "hour_15",
+        "hour_16",
+        "hour_17",
+        "hour_18",
+        "hour_19",
+        "hour_20",
+        "hour_21",
+        "hour_22",
+        "hour_23"
+      ],
+      "selection_rule": "maximum full-sample silhouette; smaller K on exact tie",
+      "min_complete_days": 30,
+      "min_complete_fraction": 0.5,
+      "numerical_threads": 1,
+      "calendar_days": 719,
+      "observed_days": 456,
+      "complete_days": 414,
+      "incomplete_days": 42,
+      "absent_dates": 263,
+      "included_days": 414,
+      "zero_total_complete_days": 0,
+      "selected": {
+        "raw": {
+          "k": 4,
+          "silhouette": 0.4104734606234147,
+          "inertia": 39788050.42952679,
+          "label_mapping": {
+            "1": 0,
+            "3": 1,
+            "2": 2,
+            "0": 3
+          }
+        },
+        "share": {
+          "k": 2,
+          "silhouette": 0.6309221289657571,
+          "inertia": 1.0025804379656493,
+          "label_mapping": {
+            "1": 0,
+            "0": 1
+          }
+        }
+      },
+      "representation_adjusted_rand": 0.3536010885585794,
+      "versions": {
+        "python": "3.8.17",
+        "pandas": "2.0.3",
+        "numpy": "1.24.4",
+        "sklearn": "1.3.2",
+        "matplotlib": "3.7.5"
+      }
+    },
+    "08": {
+      "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
+      "seed": 18,
+      "test_fraction": 0.2,
+      "cv_splits": 5,
+      "train_hours": 8679,
+      "test_hours": 2207,
+      "train_dates": 364,
+      "test_dates": 92,
+      "train_start": "2011-01-01 00:00:00",
+      "train_end": "2012-08-03 23:00:00",
+      "test_start": "2012-08-04 00:00:00",
+      "test_end": "2012-12-19 23:00:00",
+      "numeric": [
+        "temp",
+        "atemp",
+        "humidity",
+        "windspeed",
+        "year"
+      ],
+      "categorical": [
+        "hour",
+        "weekday",
+        "month",
+        "season",
+        "holiday",
+        "workingday",
+        "weather"
+      ],
+      "ignored_input_columns": [
+        "casual",
+        "casual_share",
+        "date",
+        "day",
+        "flag_any_review",
+        "flag_iqr_atemp",
+        "flag_iqr_casual",
+        "flag_iqr_count",
+        "flag_iqr_humidity",
+        "flag_iqr_registered",
+        "flag_iqr_temp",
+        "flag_iqr_windspeed",
+        "flag_zero_humidity",
+        "flag_zero_windspeed",
+        "is_weekend",
+        "log1p_count",
+        "registered",
+        "registered_share",
+        "source_csv_row",
+        "year_month"
+      ],
+      "alpha_grid": [
+        0.01,
+        0.014677992676220698,
+        0.021544346900318832,
+        0.03162277660168379,
+        0.046415888336127774,
+        0.06812920690579612,
+        0.1,
+        0.1467799267622069,
+        0.21544346900318834,
+        0.31622776601683794,
+        0.46415888336127775,
+        0.6812920690579611,
+        1.0,
+        1.467799267622069,
+        2.154434690031882,
+        3.1622776601683795,
+        4.6415888336127775,
+        6.812920690579608,
+        10.0,
+        14.67799267622069,
+        21.54434690031882,
+        31.622776601683793,
+        46.41588833612777,
+        68.12920690579608,
+        100.0
+      ],
+      "best_alpha": 0.1467799267622069,
+      "alpha_at_grid_boundary": false,
+      "alpha_scoring": "mean fold MSE",
+      "coefficient_tolerance": 1e-08,
+      "permutation_source": "last inner validation block; forest fitted on preceding inner training block",
+      "permutation_scoring": "increase in RMSE (rentals/hour)",
+      "permutation_repeats": 10,
+      "rf_parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "criterion": "squared_error",
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 2,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 150,
+        "n_jobs": 1,
+        "oob_score": false,
+        "random_state": 18,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "numerical_threads": 1,
+      "versions": {
+        "python": "3.8.17",
+        "pandas": "2.0.3",
+        "numpy": "1.24.4",
+        "scipy": "1.10.1",
+        "sklearn": "1.3.2",
+        "matplotlib": "3.7.5"
+      }
+    }
+  },
+  "min_samples": 30,
+  "versions": {
+    "python": "3.8.17",
+    "pandas": "2.0.3",
+    "numpy": "1.24.4"
+  },
+  "evidence_files": [
+    {
+      "step": "06",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_run_metadata.json",
+      "sha256": "97421ae3f1c389f1f94f89a02e7282e6e27a360d1c9eb99a43ef53ce6a4b7408"
+    },
+    {
+      "step": "06",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_tests.csv",
+      "sha256": "009018cb207a68c06c4bc78fe5a44eaefd6411eb76c56e318716e2af5329399c"
+    },
+    {
+      "step": "06",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_weather_posthoc.csv",
+      "sha256": "57b1e08d9822d0234995d06c95ee39af57286dccd5eb7b914b83cc978fa5e01a"
+    },
+    {
+      "step": "07",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_run_metadata.json",
+      "sha256": "eec0af67d97419b5ac137dbf9b94cd3697fefc7f2df39205fb8d191bfa2fcd0a"
+    },
+    {
+      "step": "07",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_cluster_summary.csv",
+      "sha256": "2afce6c1faa92a51f7fb893bfc44bac9fc6c9f42569bdcab6aaa7e732ff7188f"
+    },
+    {
+      "step": "07",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_k_metrics.csv",
+      "sha256": "feff56bb44703bebe830feb9e17abe1939a31f8850cd8f6b2744c8d71915799f"
+    },
+    {
+      "step": "07",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_retention.csv",
+      "sha256": "ad18aeafbbe0f2410ac37e5b66ed8b47f29b44017bebb75434dc6d402f12e6b3"
+    },
+    {
+      "step": "08",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_run_metadata.json",
+      "sha256": "8f380850c7f5ece81917314904e7e2a36e2d2fd47331132209c6b33a0c207354"
+    },
+    {
+      "step": "08",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_comparison.csv",
+      "sha256": "7a2790b79d505adf61c50a6a8638bac18247cd493b9bb24d9815ef104cd719f1"
+    },
+    {
+      "step": "08",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_model_metrics.csv",
+      "sha256": "ce6e30909e8b2b171027f8491d537b059f486ec875deed618b48880ed12fed1d"
+    },
+    {
+      "step": "08",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_spearman.csv",
+      "sha256": "863a206ce13224bcef89871da9a79801dfb4f6844e61d3cffb133368047184f1"
+    },
+    {
+      "step": "01",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\train.csv",
+      "sha256": "0cf70c35eeb6405a40cc9e124854e2da901fa88fe7374a75d141e7401bf4c857"
+    },
+    {
+      "step": "01",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\test.csv",
+      "sha256": "3f1d0ebb197ba9b9a79280b30912093ce18959fac6e1931691092cda449eb63e"
+    },
+    {
+      "step": "01",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\sampleSubmission.csv",
+      "sha256": "58c27951183b10437d6752cf5bac708ae9f80490d991c24ff76de296f71cb2f2"
+    },
+    {
+      "step": "09",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51"
+    },
+    {
+      "step": "09",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\09_synthesis.py",
+      "sha256": "5e08b29d471260b6488e103699d5d339db35fab69efbdf11d6020a7e5afd005f"
+    },
+    {
+      "step": "09",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\01_data_audit.py",
+      "sha256": "a8d9a05e2ec513d07396eb697ef81733bd7c5f9aa625f6d2b817e97da8c6ca26"
+    },
+    {
+      "step": "09",
+      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\05_user_behavior.py",
+      "sha256": "efdffde5e56341d95e1fda1cb8f3b16d8a5e8153156b1a3912ea1521d673ae60"
+    }
+  ],
+  "policy": "01 raw audit and 02-05 core evidence recomputed; 06-08 input hashes verified; no retuning"
+}

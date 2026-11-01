@@ -1,0 +1,3 @@
+﻿workingday,observed_hours,observed_dates,mean_count,median_count,std_count,q25_count,q75_count,observed_rental_sum
+0,3474,145,188.50662061024755,128.0,173.72401532500044,44.0,304.0,654872
+1,7412,311,193.01187263896384,151.0,184.51365904214774,41.0,277.0,1430604

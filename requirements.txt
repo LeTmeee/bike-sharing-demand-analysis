@@ -1,0 +1,8 @@
+# Core libraries for data analysis and visualization.
+pandas
+numpy
+matplotlib
+seaborn
+scipy>=1.10
+scikit-learn>=1.2
+threadpoolctl>=3.1

@@ -1,0 +1,24 @@
+﻿file,field,expected_type,missing_count,invalid_count,minimum,maximum,zero_count
+train.csv,datetime,datetime,0,0,2011-01-01 00:00:00,2012-12-19 23:00:00,
+train.csv,season,numeric,0,0,1,4,0
+train.csv,holiday,numeric,0,0,0,1,10575
+train.csv,workingday,numeric,0,0,0,1,3474
+train.csv,weather,numeric,0,0,1,4,0
+train.csv,temp,numeric,0,0,0.82,41.0,0
+train.csv,atemp,numeric,0,0,0.76,45.455,0
+train.csv,humidity,numeric,0,0,0,100,22
+train.csv,windspeed,numeric,0,0,0.0,56.9969,1313
+train.csv,casual,numeric,0,0,0,367,986
+train.csv,registered,numeric,0,0,0,886,15
+train.csv,count,numeric,0,0,1,977,0
+test.csv,datetime,datetime,0,0,2011-01-20 00:00:00,2012-12-31 23:00:00,
+test.csv,season,numeric,0,0,1,4,0
+test.csv,holiday,numeric,0,0,0,1,6304
+test.csv,workingday,numeric,0,0,0,1,2040
+test.csv,weather,numeric,0,0,1,4,0
+test.csv,temp,numeric,0,0,0.82,40.18,0
+test.csv,atemp,numeric,0,0,0.0,50.0,2
+test.csv,humidity,numeric,0,0,16,100,0
+test.csv,windspeed,numeric,0,0,0.0,55.9986,867
+sampleSubmission.csv,datetime,datetime,0,0,2011-01-20 00:00:00,2012-12-31 23:00:00,
+sampleSubmission.csv,count,numeric,0,0,0,0,6493

@@ -1,0 +1,9 @@
+﻿topic,decision
+validation,缺失、非法值、重复时间戳、非整点或总量不一致时停止，不自动修复。
+zero_weather,零湿度、零风速仅标记，保留原值。
+iqr,按全样本 1.5×IQR 标记七个连续变量；不是错误判定，不删除、不缩尾。
+missing_hours,不补时间行、不补零、不插值；结合第01步时间覆盖表解释。
+time,按时间排序；weekday 为周一0至周日6；周末独立于 workingday。
+share,逐小时占比用于观察；分组占比应重新用分组租赁量总和相除，不直接平均。
+zero_count,count=0 时两类用户占比为空，这是派生值未定义，不是原始缺失。
+labels,season、weather 保留原始编码，未验证单位和编码解释前不添加标签。

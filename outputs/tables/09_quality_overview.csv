@@ -1,0 +1,12 @@
+﻿metric,value
+observed_hours,10886.0
+observed_dates,456.0
+mean_count,191.57413191254824
+median_count,145.0
+skewness_count,1.2420662117180776
+maximum_count,977.0
+zero_humidity_rows,22.0
+zero_windspeed_rows,1313.0
+count_iqr_lower_fence,-321.0
+count_iqr_upper_fence,647.0
+count_iqr_flagged_rows,300.0

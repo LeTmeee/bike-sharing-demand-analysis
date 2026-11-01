@@ -1,0 +1,3 @@
+﻿is_weekend,observed_hours,observed_dates,mean_count,median_count,std_count,q25_count,q75_count,observed_rental_sum
+0,7723,324,192.7245888903276,151.0,183.88368661924318,41.0,278.0,1488412
+1,3163,132,188.7650964274423,128.0,174.27188772049965,44.0,303.5,597064

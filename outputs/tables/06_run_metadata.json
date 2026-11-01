@@ -1,0 +1,12 @@
+{
+  "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
+  "seed": 18,
+  "bootstrap": 2000,
+  "python": "3.8.17",
+  "pandas": "2.0.3",
+  "numpy": "1.24.4",
+  "scipy": "1.10.1",
+  "dates": 456,
+  "complete_dates": 414,
+  "tied_weather_dates": 15
+}

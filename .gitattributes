@@ -1,0 +1,14 @@
+# Keep CSV bytes unchanged: analysis provenance uses SHA256 of these inputs.
+*.csv -text
+*.tsv -text
+*.png binary
+*.jpg binary
+*.pdf binary
+
+# Source and documentation are portable text.
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

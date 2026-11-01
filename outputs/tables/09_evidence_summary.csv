@@ -1,0 +1,57 @@
+﻿research_question,finding,evidence_file,limitation
+01,重新审计三个原始文件：FAIL=0项，WARN=3项；原始train的12个字段与当前处理后输入一致。,09_raw_audit_checks.csv,WARN表示待复核而非错误；test.csv和sampleSubmission.csv不提供真实需求标签。
+RQ4,"观测小时数 10,886；总需求均值 191.57、中位数 145.00、偏度 1.24。",09_quality_overview.csv,描述的是处理后训练数据；不能据此证明原始文件没有缺失或错误。
+RQ1,workingday=0 时，casual 的最高小时均值位于 14:00，为 145.03 次（n=145）。,09_peak_hours.csv,按各用户类型分别计算，保留并列峰值；不代表该时段每一天都是最高。
+RQ1,workingday=1 时，casual 的最高小时均值位于 17:00，为 56.51 次（n=311）。,09_peak_hours.csv,按各用户类型分别计算，保留并列峰值；不代表该时段每一天都是最高。
+RQ1,workingday=0 时，registered 的最高小时均值位于 12:00，为 249.32 次（n=145）。,09_peak_hours.csv,按各用户类型分别计算，保留并列峰值；不代表该时段每一天都是最高。
+RQ1,workingday=1 时，registered 的最高小时均值位于 17:00，为 472.70 次（n=311）。,09_peak_hours.csv,按各用户类型分别计算，保留并列峰值；不代表该时段每一天都是最高。
+RQ2,temp 与 count：Pearson=0.394，Spearman=0.408。,09_weather_correlations.csv,相关性不是因果效应；nan 表示相关系数未定义。
+RQ2,atemp 与 count：Pearson=0.390，Spearman=0.407。,09_weather_correlations.csv,相关性不是因果效应；nan 表示相关系数未定义。
+RQ2,humidity 与 count：Pearson=-0.317，Spearman=-0.354。,09_weather_correlations.csv,相关性不是因果效应；nan 表示相关系数未定义。
+RQ2,windspeed 与 count：Pearson=0.101，Spearman=0.136。,09_weather_correlations.csv,相关性不是因果效应；nan 表示相关系数未定义。
+RQ3,"casual：观测租赁次数 392,135，占比 18.80%，小时均值 36.02。",09_overall_users.csv,占比为租赁次数占比，不是独立用户占比，也不能确定出行目的。
+RQ3,"registered：观测租赁次数 1,693,341，占比 81.20%，小时均值 155.55。",09_overall_users.csv,占比为租赁次数占比，不是独立用户占比，也不能确定出行目的。
+RQ1,总需求最高小时均值：17:00，468.77次，n=456。,09_hourly_demand.csv,按实际观测小时计算；保留并列峰值，不代表每一天的峰值。
+RQ1,2011年，season=1：小时均值71.91，n=1323。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2011年，season=2：小时均值160.94，n=1367。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2011年，season=3：小时均值186.99，n=1365。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2011年，season=4：小时均值154.79，n=1367。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2012年，season=1：小时均值159.48，n=1363。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2012年，season=2：小时均值269.60，n=1366。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2012年，season=3：小时均值281.74，n=1368。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ1,2012年，season=4：小时均值243.19，n=1367。,09_seasonal_demand.csv,保留原始季节编码；跨年比较受天气和样本构成影响。
+RQ2,weather=1：小时均值205.24，中位数161.00，n=7192。,09_weather_demand.csv,小样本天气类别不可形成一般性结论，日历构成可能混杂。
+RQ2,weather=2：小时均值178.96，中位数134.00，n=2834。,09_weather_demand.csv,小样本天气类别不可形成一般性结论，日历构成可能混杂。
+RQ2,weather=3：小时均值118.85，中位数71.00，n=859。,09_weather_demand.csv,小样本天气类别不可形成一般性结论，日历构成可能混杂。
+RQ2,weather=4：小时均值164.00，中位数164.00，n=1。,09_weather_demand.csv,小样本天气类别不可形成一般性结论，日历构成可能混杂。
+06,"workingday_Mann_Whitney：n=414，原始p=0.1992，三项Holm校正p=0.1992，Cliffs_delta_work_minus_nonwork=0.0773；按日期bootstrap区间 [-0.0397, 0.2033]；以0.05为阈值，没有足够证据拒绝原假设。",E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,以日期为分析单位；Mann–Whitney检验不是均值相等检验。跨日独立仍是假设，未控制季节、年份混杂。
+06,weather_Kruskal_Wallis：n=399，原始p=6.59e-06，三项Holm校正p=1.318e-05，rank_epsilon_squared=0.0552；以0.05为阈值，存在拒绝原假设的统计证据。,E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,以日期为分析单位；Mann–Whitney检验不是均值相等检验。跨日独立仍是假设，未控制季节、年份混杂。
+06,"temperature_Spearman：n=414，原始p=7.676e-34，三项Holm校正p=2.303e-33，Spearman_rho=0.5481；按日期bootstrap区间 [0.4739, 0.6109]；以0.05为阈值，存在拒绝原假设的统计证据。",E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,以日期为分析单位；Mann–Whitney检验不是均值相等检验。跨日独立仍是假设，未控制季节、年份混杂。
+06,全部日期敏感性：workingday_Mann_Whitney，n=456，Holm校正p=0.7073，Cliffs_delta_work_minus_nonwork=0.0218。,E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,不完整日期的小时构成不同；敏感性结果不替代完整日主分析。
+06,全部日期敏感性：weather_Kruskal_Wallis，n=441，Holm校正p=1.267e-06，rank_epsilon_squared=0.0606。,E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,不完整日期的小时构成不同；敏感性结果不替代完整日主分析。
+06,全部日期敏感性：temperature_Spearman，n=456，Holm校正p=9.349e-46，Spearman_rho=0.6016。,E:\港城\semA\5002\Project\project\outputs\tables\06_tests.csv,不完整日期的小时构成不同；敏感性结果不替代完整日主分析。
+06,天气事后比较 1 vs 2：组内Holm校正p=0.003368。,E:\港城\semA\5002\Project\project\outputs\tables\06_weather_posthoc.csv,天气编码为每日主要天气；排除主要天气并列日和过少样本类别，详见第06步。
+06,天气事后比较 1 vs 3：组内Holm校正p=0.0002581。,E:\港城\semA\5002\Project\project\outputs\tables\06_weather_posthoc.csv,天气编码为每日主要天气；排除主要天气并列日和过少样本类别，详见第06步。
+06,天气事后比较 2 vs 3：组内Holm校正p=0.003368。,E:\港城\semA\5002\Project\project\outputs\tables\06_weather_posthoc.csv,天气编码为每日主要天气；排除主要天气并列日和过少样本类别，详见第06步。
+07,raw 表示选择 K=4，silhouette=0.4105，使用 414 个日期。,E:\港城\semA\5002\Project\project\outputs\tables\07_k_metrics.csv,share比较日内形状，raw比较规模与形状；K由探索性silhouette选择，不是已知真实类别。
+07,raw 群0：88日，工作日占比42.05%，平均曲线峰值小时=17。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,raw 群1：149日，工作日占比100.00%，平均曲线峰值小时=17。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,raw 群2：89日，工作日占比3.37%，平均曲线峰值小时=13。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,raw 群3：88日，工作日占比97.73%，平均曲线峰值小时=17。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,share 表示选择 K=2，silhouette=0.6309，使用 414 个日期。,E:\港城\semA\5002\Project\project\outputs\tables\07_k_metrics.csv,share比较日内形状，raw比较规模与形状；K由探索性silhouette选择，不是已知真实类别。
+07,share 群0：137日，工作日占比0.73%，平均曲线峰值小时=13。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,share 群1：277日，工作日占比98.92%，平均曲线峰值小时=17。,E:\港城\semA\5002\Project\project\outputs\tables\07_cluster_summary.csv,群标签不表示出行目的；工作日与天气仅作事后解释，未参与聚类拟合。
+07,观测456日，保留414日；不完整42日，时间范围内全缺失263日。,E:\港城\semA\5002\Project\project\outputs\tables\07_retention.csv,只对完整24小时且正总量日期聚类，不补零；筛选可能改变季节构成。
+08,Lasso alpha=0.14678，保留10/12个源变量：hour、humidity、atemp、weekday、temp、weather、month、season、windspeed、year。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,每折内重新标准化与one-hot编码；相关变量可能互相替代，非零系数不是显著性结论。
+08,训练期验证置换：hour，RMSE增加146.746 ± 2.945。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,±为重复置换标准差，不是置信区间；逐字段打乱可能形成不自然的组合。
+08,训练期验证置换：workingday，RMSE增加39.517 ± 1.710。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,±为重复置换标准差，不是置信区间；逐字段打乱可能形成不自然的组合。
+08,训练期验证置换：humidity，RMSE增加38.687 ± 2.136。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,±为重复置换标准差，不是置信区间；逐字段打乱可能形成不自然的组合。
+08,训练期探索性Spearman：humidity 与count，rho=-0.3569。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,与第04步全样本或第06步每日聚合使用不同样本/单位；不据此自动筛选或解释因果。
+08,训练期探索性Spearman：atemp 与count，rho=0.4412。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,与第04步全样本或第06步每日聚合使用不同样本/单位；不据此自动筛选或解释因果。
+08,训练期探索性Spearman：temp 与count，rho=0.4393。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,与第04步全样本或第06步每日聚合使用不同样本/单位；不据此自动筛选或解释因果。
+08,训练期探索性Spearman：windspeed 与count，rho=0.1345。,E:\港城\semA\5002\Project\project\outputs\tables\08_comparison.csv,与第04步全样本或第06步每日聚合使用不同样本/单位；不据此自动筛选或解释因果。
+08,training_mean / final_test：RMSE=233.589，MAE=176.498，R²=-0.1567。,E:\港城\semA\5002\Project\project\outputs\tables\08_model_metrics.csv,测试期独立保留，未用于调参、排名或筛选；没有比较缩减变量模型，不能声称筛选提高了精度。
+08,lasso / final_test：RMSE=133.415，MAE=99.701，R²=0.6227。,E:\港城\semA\5002\Project\project\outputs\tables\08_model_metrics.csv,测试期独立保留，未用于调参、排名或筛选；没有比较缩减变量模型，不能声称筛选提高了精度。
+08,random_forest / final_test：RMSE=107.167，MAE=73.771，R²=0.7565。,E:\港城\semA\5002\Project\project\outputs\tables\08_model_metrics.csv,测试期独立保留，未用于调参、排名或筛选；没有比较缩减变量模型，不能声称筛选提高了精度。
+08,random_forest / inner_validation：RMSE=96.729，MAE=70.496，R²=0.8051。,E:\港城\semA\5002\Project\project\outputs\tables\08_model_metrics.csv,测试期独立保留，未用于调参、排名或筛选；没有比较缩减变量模型，不能声称筛选提高了精度。
+08,训练8679小时（2011-01-01 00:00:00—2012-08-03 23:00:00）；最终测试2207小时（2012-08-04 00:00:00—2012-12-19 23:00:00）。,E:\港城\semA\5002\Project\project\outputs\tables\08_run_metadata.json,排除casual、registered、用户占比、log1p_count和标记字段；按日期先后划分，天气为同时段观测值。

@@ -1,0 +1,3 @@
+﻿scope,observed_hours,observed_dates,total_rentals,user_rentals,mean_rentals,median_rentals,std_rentals,q25_rentals,q75_rentals,user_type,rental_share
+all,10886,456,2085476,392135,36.02195480433584,17.0,49.96047657264955,4.0,49.0,casual,0.188031413451893
+all,10886,456,2085476,1693341,155.5521771082124,118.0,151.03903308192452,36.0,222.0,registered,0.811968586548107
