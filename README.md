@@ -46,9 +46,12 @@
 
 先完成01、02，再运行03–08，最后运行09。03–08独立读取处理后数据；09需要06–08已生成且与当前输入版本一致的结果。09还会导入01和05的辅助函数，因此请保持整个`scripts/`目录完整。
 
-## 3. 环境配置（Windows PowerShell）
+## 3. 环境配置（Windows PowerShell / macOS zsh、bash）
 
-建议使用 **Python 3.11**。所有命令均在项目根目录执行。先确认当前Python版本，再创建独立环境；统一使用`.venv`作为虚拟环境目录。
+环境使用 **Python 3.11**。所有命令均在项目根目录执行。先确认当前Python版本，再创建独立环境；统一使用`.venv`作为虚拟环境目录。
+
+**Windows PowerShell：**
+
 ```powershell
 python --version
 python -m venv .venv
@@ -57,6 +60,35 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -c "import pandas, numpy, matplotlib, seaborn, scipy, sklearn, threadpoolctl; print('Dependencies OK')"
 ```
 
+**macOS（zsh / bash）：**
+
+先在终端进入项目根目录（包含 `README.md`、`requirements.txt` 和 `scripts/` 的目录），后续所有命令均从该目录执行。检查是否已安装 Python 3.11：
+
+```bash
+python3.11 --version
+```
+
+应显示 `Python 3.11.x`。如果提示找不到命令，请先安装 Python 3.11：可使用 Python 官网的 macOS 3.11 安装包；如果已安装 Homebrew，也可运行以下命令。安装完成后重新打开终端，回到项目根目录并再次检查版本。
+
+```bash
+# 仅在已安装 Homebrew 且需要安装 Python 3.11 时执行
+brew install python@3.11
+python3.11 --version
+```
+
+确认版本后创建虚拟环境、升级 pip、安装并验证依赖：
+
+```bash
+python3.11 -m venv .venv
+./.venv/bin/python --version
+./.venv/bin/python -m pip install --upgrade pip
+./.venv/bin/python -m pip install -r requirements.txt
+./.venv/bin/python -m pip check
+./.venv/bin/python -c "import pandas, numpy, matplotlib, seaborn, scipy, sklearn, threadpoolctl; print('Dependencies OK')"
+```
+
+`pip check` 应显示依赖兼容检查通过，导入检查应输出 `Dependencies OK`。macOS 后续命令统一使用 `./.venv/bin/python`，无需激活虚拟环境。
+
 依赖以[requirements.txt](requirements.txt)为准：pandas、NumPy用于数据处理，Matplotlib、Seaborn用于绘图，SciPy用于统计检验，scikit-learn用于聚类和建模，threadpoolctl用于控制数值线程。当前没有完整依赖版本锁定，06–09元数据记录对应运行版本。
 
 下方命令直接调用虚拟环境解释器，**无需激活环境**。若使用其他已装齐依赖的环境，统一替换解释器路径即可；不要在同一次流程中混用环境。
@@ -64,6 +96,10 @@ python -m venv .venv
 ## 4. 运行命令
 
 ### 4.1 按顺序运行分析
+
+以下 Windows 和 macOS 命令均从项目根目录执行。
+
+**Windows PowerShell：**
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/01_data_audit.py
@@ -77,15 +113,39 @@ python -m venv .venv
 .\.venv\Scripts\python.exe scripts/09_synthesis.py
 ```
 
-**请逐条运行。** 每步结束后可输入`$LASTEXITCODE`检查状态，0表示正常退出；非0时先处理错误再继续，避免后续步骤使用旧文件。审计中的WARN需要复核，不一定表示数据错误。
+**macOS（zsh / bash）：**
+
+```bash
+./.venv/bin/python scripts/01_data_audit.py
+./.venv/bin/python scripts/02_distribution_quality.py
+./.venv/bin/python scripts/03_temporal_patterns.py
+./.venv/bin/python scripts/04_weather_analysis.py
+./.venv/bin/python scripts/05_user_behavior.py
+./.venv/bin/python scripts/06_hypothesis_testing.py
+./.venv/bin/python scripts/07_clustering.py
+./.venv/bin/python scripts/08_feature_selection.py
+./.venv/bin/python scripts/09_synthesis.py
+```
+
+**请逐条运行。** 每步结束后，Windows PowerShell 可立即输入`$LASTEXITCODE`，macOS zsh / bash 可立即输入`echo $?`检查状态，0表示正常退出；非0时先处理错误再继续，避免后续步骤使用旧文件。审计中的WARN需要复核，不一定表示数据错误。
 
 如果数据和06–08结果均未改变，只需重新生成综合摘要：
+
+**Windows PowerShell：**
 
 ```powershell
 .\.venv\Scripts\python.exe scripts/09_synthesis.py
 ```
 
+**macOS（zsh / bash）：**
+
+```bash
+./.venv/bin/python scripts/09_synthesis.py
+```
+
 ### 4.2 测试与参数
+
+**Windows PowerShell：**
 
 ```powershell
 # 运行06–09模块的全部自动化测试
@@ -94,6 +154,17 @@ python -m venv .venv
 # 查看各脚本支持的参数
 .\.venv\Scripts\python.exe scripts/08_feature_selection.py --help
 .\.venv\Scripts\python.exe scripts/09_synthesis.py --help
+```
+
+**macOS（zsh / bash）：**
+
+```bash
+# 运行06–09模块的全部自动化测试
+./.venv/bin/python -m unittest discover -s scripts -p "test_*.py"
+
+# 查看各脚本支持的参数
+./.venv/bin/python scripts/08_feature_selection.py --help
+./.venv/bin/python scripts/09_synthesis.py --help
 ```
 
 脚本默认从项目位置定位输入和输出。各脚本路径参数略有不同，使用前查看`--help`：01使用`--data-dir`、`--output-dir`；02支持`--processed-dir`；03–08通常支持`--input`、`--tables-dir`、`--figures-dir`。09另外支持`--raw-dir`和`--source-tables-dir`，分别指定原始文件及06–08证据目录。
@@ -159,4 +230,3 @@ project/
 - **区分标签与缺口：**训练标签仅覆盖每月1–19日；缺失小时不补零，提交模板中的零值不参与分析。
 - **避免错误解释：**相关不代表因果，租赁次数不等于人数；预测count时不得使用casual、registered或需求衍生字段。
 - **核对生成状态：**运行失败后旧文件可能仍在；结合退出码、输入哈希和运行元数据判断是否为本次结果。
-
