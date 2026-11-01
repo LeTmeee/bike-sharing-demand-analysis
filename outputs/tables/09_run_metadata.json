@@ -1,6 +1,6 @@
 {
   "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
-  "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+  "input": "E:\\5002test\\data\\processed\\train_eda.csv",
   "upstream_runs": {
     "06": {
       "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
@@ -15,7 +15,7 @@
       "tied_weather_dates": 15
     },
     "07": {
-      "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "input": "E:\\5002test\\data\\processed\\train_eda.csv",
       "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
       "seed": 18,
       "n_init": 20,
@@ -91,7 +91,7 @@
       }
     },
     "08": {
-      "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "input": "E:\\5002test\\data\\processed\\train_eda.csv",
       "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
       "seed": 18,
       "test_fraction": 0.2,
@@ -215,92 +215,92 @@
   "evidence_files": [
     {
       "step": "06",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_run_metadata.json",
+      "path": "E:\\5002test\\outputs\\tables\\06_run_metadata.json",
       "sha256": "97421ae3f1c389f1f94f89a02e7282e6e27a360d1c9eb99a43ef53ce6a4b7408"
     },
     {
       "step": "06",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_tests.csv",
+      "path": "E:\\5002test\\outputs\\tables\\06_tests.csv",
       "sha256": "009018cb207a68c06c4bc78fe5a44eaefd6411eb76c56e318716e2af5329399c"
     },
     {
       "step": "06",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\06_weather_posthoc.csv",
+      "path": "E:\\5002test\\outputs\\tables\\06_weather_posthoc.csv",
       "sha256": "57b1e08d9822d0234995d06c95ee39af57286dccd5eb7b914b83cc978fa5e01a"
     },
     {
       "step": "07",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_run_metadata.json",
-      "sha256": "eec0af67d97419b5ac137dbf9b94cd3697fefc7f2df39205fb8d191bfa2fcd0a"
+      "path": "E:\\5002test\\outputs\\tables\\07_run_metadata.json",
+      "sha256": "1b7dfef94f2293da12c898b470f7455104c075ee0a66e810ba8515bff58695fb"
     },
     {
       "step": "07",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_cluster_summary.csv",
+      "path": "E:\\5002test\\outputs\\tables\\07_cluster_summary.csv",
       "sha256": "2afce6c1faa92a51f7fb893bfc44bac9fc6c9f42569bdcab6aaa7e732ff7188f"
     },
     {
       "step": "07",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_k_metrics.csv",
+      "path": "E:\\5002test\\outputs\\tables\\07_k_metrics.csv",
       "sha256": "feff56bb44703bebe830feb9e17abe1939a31f8850cd8f6b2744c8d71915799f"
     },
     {
       "step": "07",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\07_retention.csv",
+      "path": "E:\\5002test\\outputs\\tables\\07_retention.csv",
       "sha256": "ad18aeafbbe0f2410ac37e5b66ed8b47f29b44017bebb75434dc6d402f12e6b3"
     },
     {
       "step": "08",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_run_metadata.json",
-      "sha256": "8f380850c7f5ece81917314904e7e2a36e2d2fd47331132209c6b33a0c207354"
+      "path": "E:\\5002test\\outputs\\tables\\08_run_metadata.json",
+      "sha256": "15c8a2c264f7e5e74b140f6b1357f09c9af2d2af24e9d40395a214e7f1e2ff14"
     },
     {
       "step": "08",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_comparison.csv",
+      "path": "E:\\5002test\\outputs\\tables\\08_comparison.csv",
       "sha256": "7a2790b79d505adf61c50a6a8638bac18247cd493b9bb24d9815ef104cd719f1"
     },
     {
       "step": "08",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_model_metrics.csv",
+      "path": "E:\\5002test\\outputs\\tables\\08_model_metrics.csv",
       "sha256": "ce6e30909e8b2b171027f8491d537b059f486ec875deed618b48880ed12fed1d"
     },
     {
       "step": "08",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\outputs\\tables\\08_spearman.csv",
+      "path": "E:\\5002test\\outputs\\tables\\08_spearman.csv",
       "sha256": "863a206ce13224bcef89871da9a79801dfb4f6844e61d3cffb133368047184f1"
     },
     {
       "step": "01",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\train.csv",
+      "path": "E:\\5002test\\data\\raw\\train.csv",
       "sha256": "0cf70c35eeb6405a40cc9e124854e2da901fa88fe7374a75d141e7401bf4c857"
     },
     {
       "step": "01",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\test.csv",
+      "path": "E:\\5002test\\data\\raw\\test.csv",
       "sha256": "3f1d0ebb197ba9b9a79280b30912093ce18959fac6e1931691092cda449eb63e"
     },
     {
       "step": "01",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\raw\\sampleSubmission.csv",
+      "path": "E:\\5002test\\data\\raw\\sampleSubmission.csv",
       "sha256": "58c27951183b10437d6752cf5bac708ae9f80490d991c24ff76de296f71cb2f2"
     },
     {
       "step": "09",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+      "path": "E:\\5002test\\data\\processed\\train_eda.csv",
       "sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51"
     },
     {
       "step": "09",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\09_synthesis.py",
-      "sha256": "5e08b29d471260b6488e103699d5d339db35fab69efbdf11d6020a7e5afd005f"
+      "path": "E:\\5002test\\scripts\\09_synthesis.py",
+      "sha256": "0d7ec00928e9a97f37d4d8f1a3e957bb580ec0a1c99bb9b8051cade14ea7ffc5"
     },
     {
       "step": "09",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\01_data_audit.py",
+      "path": "E:\\5002test\\scripts\\01_data_audit.py",
       "sha256": "a8d9a05e2ec513d07396eb697ef81733bd7c5f9aa625f6d2b817e97da8c6ca26"
     },
     {
       "step": "09",
-      "path": "E:\\港城\\semA\\5002\\Project\\project\\scripts\\05_user_behavior.py",
+      "path": "E:\\5002test\\scripts\\05_user_behavior.py",
       "sha256": "efdffde5e56341d95e1fda1cb8f3b16d8a5e8153156b1a3912ea1521d673ae60"
     }
   ],

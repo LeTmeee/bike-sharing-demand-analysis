@@ -1,5 +1,5 @@
 {
-  "input": "E:\\港城\\semA\\5002\\Project\\project\\data\\processed\\train_eda.csv",
+  "input": "E:\\5002test\\data\\processed\\train_eda.csv",
   "input_sha256": "e5305c1d3624a7c0401ac35bbe402131a00ae8e68429afdc78a140f9cc171c51",
   "seed": 18,
   "test_fraction": 0.2,

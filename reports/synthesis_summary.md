@@ -2,7 +2,7 @@
 
 > 此文件由第09步自动生成，再次运行会覆盖；最终课程报告请另行整理为 final_report.md。
 
-分析输入：`E:\港城\semA\5002\Project\project\data\processed\train_eda.csv`。
+分析输入：`E:\5002test\data\processed\train_eda.csv`。
 
 观测范围：2011-01-01 00:00:00 至 2012-12-19 23:00:00；仅统计实际观测小时。
 
